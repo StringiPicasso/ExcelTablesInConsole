@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "x2zPVe5vVEHkq+Te25XD7icQrMMGY/UqZiwr43S9gjj3yMK9cbaD/5addUkblCYDE72zeLYv/4VkWnG10+16iw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Анастасия Еремина\\Documents\\GitHubTests\\ExcelTablesInConsole\\ExcelTablesInConsole\\ExcelTablesInConsole\\ExcelTablesInConsole.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Анастасия Еремина\\.nuget\\packages\\documentformat.openxml\\3.0.0\\documentformat.openxml.3.0.0.nupkg.sha512",
+    "C:\\Users\\Анастасия Еремина\\.nuget\\packages\\documentformat.openxml.framework\\3.0.0\\documentformat.openxml.framework.3.0.0.nupkg.sha512",
+    "C:\\Users\\Анастасия Еремина\\.nuget\\packages\\system.io.packaging\\8.0.0\\system.io.packaging.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
