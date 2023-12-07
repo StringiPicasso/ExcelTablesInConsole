@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ExcelTablesInConsole;
+
+class Program
+{
+    static void Main()
+    {
+        CommandHandler command = new CommandHandler();
+
+        command.MenuService();
+    }
+}

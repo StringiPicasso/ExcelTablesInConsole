@@ -40,9 +40,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "DocumentFormat.OpenXml": {
+            "ClosedXML": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[0.102.1, )"
             }
           },
           "imports": [
