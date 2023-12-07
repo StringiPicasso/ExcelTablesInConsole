@@ -13,9 +13,9 @@ namespace ExcelTablesInConsole
 
             using (var workbook = new XLWorkbook(filePath))
             {
-                bool _isWork = true;
+                bool isWork = true;
 
-                while (_isWork)
+                while (isWork)
                 {
                     Console.WriteLine();
                     Console.WriteLine("Выберите номер команды:");
