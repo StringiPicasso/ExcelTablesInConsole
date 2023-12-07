@@ -4,31 +4,31 @@ namespace ExcelTablesInConsole
 {
     internal class ExcelService: IExcelService
     {
-        public string productsWorksheet => "Товары";
-        public string entryWorksheet => "Заявки";
-        public string customersWorksheet => "Клиенты";
+        public string ProductsWorksheet => "Товары";
+        public string EntryWorksheet => "Заявки";
+        public string CustomersWorksheet => "Клиенты";
 
         public void SearchCustomersByProductName(XLWorkbook workbook, string productName)
         {
-            var productsRows = GetNeccessaryRangeRow(workbook, productsWorksheet, "B", productName);
+            var productsRows = GetNeccessaryRangeRow(workbook, ProductsWorksheet, "B", productName);
             var productCode = productsRows.Cell("A").Value;
             var priceProduct = productsRows.Cell("D").GetDouble();
 
-            var entryRows = GetNeccessaryRangeRow(workbook, entryWorksheet, "B", productCode.ToString());
+            var entryRows = GetNeccessaryRangeRow(workbook, EntryWorksheet, "B", productCode.ToString());
             var customerCode = entryRows.Cell("C").Value;
             var countProduct = entryRows.Cell("E").GetDouble();
             var dataPlacement = entryRows.Cell("F").Value;
-            var allprice = priceProduct * countProduct;
+            var allPrice = priceProduct * countProduct;
 
-            var cusomersRows = GetNeccessaryRangeRow(workbook, customersWorksheet, "A", customerCode.ToString());
+            var cusomersRows = GetNeccessaryRangeRow(workbook, CustomersWorksheet, "A", customerCode.ToString());
             var customerName = cusomersRows.Cell("B").Value;
 
-            Console.WriteLine($"\nКлиент: {customerName}\nДата заказа: {dataPlacement}\nКоличество: {customerCode}\nЦена: {allprice}");
+            Console.WriteLine($"\nКлиент: {customerName}\nДата заказа: {dataPlacement}\nКоличество: {customerCode}\nЦена: {allPrice}");
         }
 
         public void EditCustomerContact(XLWorkbook workbook, string customerName, string newContact, string newCompany)
         {
-            var customerRows = GetNeccessaryRangeRow(workbook, customersWorksheet, "D", customerName);
+            var customerRows = GetNeccessaryRangeRow(workbook, CustomersWorksheet, "D", customerName);
 
             Console.WriteLine("Обновление данных контактного лица: " + customerRows.Cell("D").Value);
 
@@ -50,7 +50,7 @@ namespace ExcelTablesInConsole
                 return;
             }
 
-            var worksheet = workbook.Worksheet(entryWorksheet);
+            var worksheet = workbook.Worksheet(EntryWorksheet);
             var orders = worksheet.RangeUsed().RowsUsed();
 
             var customerOrders = new Dictionary<string, int>();
@@ -64,7 +64,7 @@ namespace ExcelTablesInConsole
                     {
                         var codeCustomer = order.Cell("C").Value;
 
-                        var custonerRow= GetNeccessaryRangeRow(workbook, customersWorksheet, "A", codeCustomer.ToString());
+                        var custonerRow= GetNeccessaryRangeRow(workbook, CustomersWorksheet, "A", codeCustomer.ToString());
 
                         string customerName = custonerRow.Cell("B").Value.ToString();
 
